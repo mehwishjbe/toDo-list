@@ -33,6 +33,15 @@ addButton.addEventListener('click', function(){
         }
     });
     div.appendChild(editButton);
+
+    const doneButton = document.createElement('button');
+    doneButton.innerHTML = 'Done';
+    doneButton.addEventListener('click', function(event){
+        if (event.target === doneButton){
+            textField.contentEditable = false;
+        }
+    });
+    div.appendChild(doneButton);
     }
 });
 
