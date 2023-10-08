@@ -44,5 +44,3 @@ addButton.addEventListener('click', function(){
     div.appendChild(doneButton);
     }
 });
-
-   
