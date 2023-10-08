@@ -24,7 +24,15 @@ addButton.addEventListener('click', function(){
     });
     div.appendChild(deleteButton);
     
-    
+    const editButton = document.createElement('button');
+    editButton.innerHTML = 'Edit';
+
+    editButton.addEventListener('click', function(event){
+        if (event.target === editButton){
+            textField.contentEditable = true;
+        }
+    });
+    div.appendChild(editButton);
     }
 });
 
