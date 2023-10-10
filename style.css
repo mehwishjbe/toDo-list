@@ -39,3 +39,12 @@ body{
     margin: 30px;
     margin-bottom: 25px;
 }
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: transparent;
+    font-size: 18px;
+}
