@@ -16,7 +16,26 @@ body{
     border-radius: 10px;
 }
 
+.todo-section h1{
+    color: black;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    padding-top: 40px;
+}
+
 #imgTodo{
     height: 30px;
     margin-left: 20px;
+}
+
+.input-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(236, 233, 233);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin: 30px;
+    margin-bottom: 25px;
 }
