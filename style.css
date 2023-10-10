@@ -48,3 +48,16 @@ input{
     background: transparent;
     font-size: 18px;
 }
+
+#add-btn{
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: gray;
+    background-color: rgb(236, 233, 233);
+}
