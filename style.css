@@ -61,3 +61,10 @@ input{
     color: gray;
     background-color: rgb(236, 233, 233);
 }
+
+#add-btn:hover{
+    background-color:  rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    transition: all 0.3s;
+}
