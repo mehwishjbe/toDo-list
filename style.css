@@ -1,3 +1,17 @@
 .update-controller{
     display: none;
 }
+
+body{
+    background: gainsboro;
+    min-height: 100vh;
+}
+
+.app{
+    width: 400px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding-top: 50px;
+    color: gray;
+}

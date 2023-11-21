@@ -15,7 +15,7 @@ function displayItems(){
                     <div class="input-controller">
                         <textarea disabled>${itemsArray[i]}</textarea>
                         <div class="edit-controller">
-                            <i class="fa-solid fa-check deleteBtn" ></i>
+                        <i class="fa-solid fa-delete-left deleteBtn"></i>
                             <i class="fa-solid fa-pen-to-square editBtn"></i>
                         </div>
                     </div>
@@ -24,7 +24,6 @@ function displayItems(){
                         <button class="cancelBtn">Cancel</button>
                     </div>
                 </div>`
-
     }
 
     document.querySelector(".to-do-list").innerHTML = items
