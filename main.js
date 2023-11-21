@@ -1,46 +1,109 @@
-const addButton = document.getElementById('add-btn');
-const inputField = document.getElementById('input-field');
-const listedItems = document.getElementById('listed-items');
+const itemsArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : []
+console.log(itemsArray);
 
-addButton.addEventListener('click', function(){
-    if(inputField.value === ""){
-        alert('enter text');
-    }else{
-        const div = document.createElement('div');
-        listedItems.appendChild(div);
+const textField = document.createElement('span');
 
-        const textField = document.createElement('span')
-        textField.innerText = inputField.value;
-        div.appendChild(textField);
+document.querySelector('#enter').addEventListener("click", () => {
+    const item = document.querySelector("#item")
+    createItem(item)
+})  
 
-        console.log(listedItems);
-        inputField.value = "";
+function displayItems(){
+    let items = ""
+    for(let i=0; i<itemsArray.length; i++){
+        items += `<div class="item">
+                    <div class="input-controller">
+                        <textarea disabled>${itemsArray[i]}</textarea>
+                        <div class="edit-controller">
+                            <i class="fa-solid fa-check deleteBtn" ></i>
+                            <i class="fa-solid fa-pen-to-square editBtn"></i>
+                        </div>
+                    </div>
+                    <div class="update-controller">
+                        <button class="saveBtn">Save</button>
+                        <button class="cancelBtn">Cancel</button>
+                    </div>
+                </div>`
 
-    const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = 'Delete';
-
-    deleteButton.addEventListener('click', function(){
-        listedItems.removeChild(div);
-    });
-    div.appendChild(deleteButton);
-    
-    const editButton = document.createElement('button');
-    editButton.innerHTML = 'Edit';
-
-    editButton.addEventListener('click', function(event){
-        if (event.target === editButton){
-            textField.contentEditable = true;
-        }
-    });
-    div.appendChild(editButton);
-
-    const doneButton = document.createElement('button');
-    doneButton.innerHTML = 'Done';
-    doneButton.addEventListener('click', function(event){
-        if (event.target === doneButton){
-            textField.contentEditable = false;
-        }
-    });
-    div.appendChild(doneButton);
     }
-});
+
+    document.querySelector(".to-do-list").innerHTML = items
+    activateDeleteListeners()
+    activateEditListeners()
+    activateSaveListeners()
+    activateCancelListeners()
+}
+
+function activateDeleteListeners(){
+    let deleteBtn = document.querySelectorAll(".deleteBtn")
+    deleteBtn.forEach((db, i) => {
+        db.addEventListener("click", () => { deleteItem(i)        })
+    })
+}
+
+function activateEditListeners(){
+     const editBtn = document.querySelectorAll(".editBtn")
+     const updateController = document.querySelectorAll(".update-controller")
+     const inputs = document.querySelectorAll(".input-controller textarea")
+     editBtn.forEach((eb, i) => {
+        eb.addEventListener("click", () => {
+            updateController[i].style.display = 'block' 
+            inputs[i].disabled = false
+        })
+     })
+}
+
+function activateSaveListeners(){
+    const saveBtn = document.querySelectorAll(".saveBtn");
+    const inputs = document.querySelectorAll(".input-controller textarea");
+    saveBtn.forEach((sb, i) => {
+        sb.addEventListener("click", () => {
+            updateItem(inputs[i].value, i);
+        })
+    })
+}
+
+function activateCancelListeners() {
+    const cancelBtns = document.querySelectorAll(".cancelBtn");
+    
+    cancelBtns.forEach((cancelBtn) => {
+        cancelBtn.addEventListener("click", () => {
+            const itemContainer = cancelBtn.closest(".item");
+            
+            if (itemContainer) {
+                const updateController = itemContainer.querySelector(".update-controller");
+                const inputTextArea = itemContainer.querySelector(".input-controller textarea");
+                
+                if (updateController) {
+                    updateController.style.display = "none";
+                }
+
+                if (inputTextArea) {
+                    inputTextArea.disabled = true;
+                }
+            }
+        });
+    });
+}
+
+function updateItem(text, i){
+    itemsArray[i] = text
+    localStorage.setItem("items", JSON.stringify(itemsArray))
+    location.reload()
+}
+
+function deleteItem(i){
+    itemsArray.splice(i, 1)
+    localStorage.setItem("items", JSON.stringify(itemsArray))
+    location.reload()
+}
+
+function createItem(item){
+    itemsArray.push(item.value)
+    localStorage.setItem("items", JSON.stringify(itemsArray))
+    location.reload()
+}
+
+window.onload = function(){
+    displayItems()
+}
