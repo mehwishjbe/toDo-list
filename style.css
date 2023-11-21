@@ -72,3 +72,8 @@ body{
     border: none;
     color: white;
 }
+
+.input-controller{
+    display: flex;
+    gap: 10px;
+}
