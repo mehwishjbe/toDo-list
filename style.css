@@ -42,3 +42,19 @@ body{
     height: 45px;
     width: 60px;
 }
+
+.to-do-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: gray;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
