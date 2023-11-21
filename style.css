@@ -49,6 +49,11 @@ body{
     gap: 15px;
 }
 
+.to-do-list i {
+    color: black;
+    cursor: pointer;
+}
+
 .item{
     display: flex;
     flex-direction: column;
