@@ -90,3 +90,8 @@ body{
     display: flex;
     gap: 10px;
 }
+
+.edit-controller{
+    display: flex;
+    gap: 5px;
+}
