@@ -5,6 +5,7 @@
 body{
     background: #3AAFA9;
     min-height: 100vh;
+    font-family: sans-serif;
 }
 
 button{
@@ -26,7 +27,6 @@ button{
 .to-do-input input{
     width: 400px;
     height: 25px;
-    font-family: inherit;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -37,7 +37,6 @@ button{
 }
 
 .to-do-input button{
-    font-family: inherit;
     border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -74,7 +73,6 @@ button{
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: inherit;
     border: none;
     color: #def2f1;
     background-color: #17252a;
