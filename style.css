@@ -58,6 +58,7 @@ button{
 .to-do-list i {
     color: #17252a;
     cursor: pointer;
+    padding-top: 12px;
 }
 
 .item{
@@ -85,6 +86,7 @@ button{
     outline: none;
     resize: none;
     line-height: 1;
+    padding-top: 12px;
     color: #def2f1;
     border-radius: 10px;
     background-color: transparent;
@@ -104,4 +106,46 @@ textarea:focus{
 .edit-controller{
     display: flex;
     gap: 5px;
+}
+
+@media(max-width: 768px){
+    .app h1{
+        width: 400px;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        color: #17252a;
+        
+    }
+
+    .to-do-input input{
+        border-radius: 10px;
+        border-radius: 10px;
+        margin-bottom: 0px;
+        font-size: 17px;
+
+
+    }
+
+    .to-do-input button{
+        border: none;
+        border-radius: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+        outline: none;
+        color: white;
+        background-color: #2B7A78;
+        height: 45px;
+        width: 75px;
+        margin-left: 170px;
+        font-weight: bold;
+        font-size: 17px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    
+
 }
